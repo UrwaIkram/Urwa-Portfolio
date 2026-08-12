@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #ffffff;
+  color: #1f1f1f;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background: #171717;
+  color: #ececec;
+  padding: 16px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-chat-btn {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #4d4d4d;
+  color: #ececec;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.new-chat-btn:hover {
+  background: #2a2a2a;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.empty-state {
+  margin: auto;
+  text-align: center;
+  color: #6e6e6e;
+}
+
+.empty-state h1 {
+  font-size: 28px;
+  color: #1f1f1f;
+  margin-bottom: 8px;
+}
+
+.message {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: 12px;
+  line-height: 1.6;
+}
+
+.message .role {
+  font-weight: 600;
+  min-width: 70px;
+}
+
+.message.user .bubble {
+  background: #f4f4f4;
+  padding: 10px 14px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+}
+
+.message.assistant .bubble {
+  padding: 10px 0;
+  white-space: pre-wrap;
+}
+
+.chat-input-bar {
+  display: flex;
+  gap: 10px;
+  padding: 16px 24px 24px;
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.chat-input-bar textarea {
+  flex: 1;
+  resize: none;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #d9d9d9;
+  font-size: 15px;
+  font-family: inherit;
+  max-height: 160px;
+}
+
+.chat-input-bar textarea:focus {
+  outline: 2px solid #10a37f;
+}
+
+.chat-input-bar button[type="submit"] {
+  padding: 0 18px;
+  border: none;
+  border-radius: 10px;
+  background: #10a37f;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chat-input-bar button:disabled {
+  background: #a9d9c9;
+  cursor: not-allowed;
+}
+
+.typing {
+  color: #6e6e6e;
+  font-style: italic;
+}
+
+.error-banner {
+  max-width: 700px;
+  margin: 0 auto 10px;
+  color: #b42318;
+  font-size: 13px;
+}
