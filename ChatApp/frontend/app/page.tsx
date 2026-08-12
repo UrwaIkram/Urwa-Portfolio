@@ -14,8 +14,7 @@ type ChatSession = {
   messages: ChatMessage[];
 };
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
-
+const BACKEND_URL = "https://urwa-portfolio-production.up.railway.app";
 export default function Home() {
   const [sessions, setSessions] = useState<ChatSession[]>([]);
   const [currentSessionId, setCurrentSessionId] = useState<string | null>(null);
