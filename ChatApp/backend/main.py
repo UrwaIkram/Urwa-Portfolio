@@ -21,8 +21,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+api_key = os.getenv("GEMINI_API_KEY")
 
+print("GEMINI_API_KEY exists:", bool(api_key))
+print("GEMINI_API_KEY prefix:", api_key[:3] if api_key else "NONE")
+
+client = genai.Client(api_key=api_key)
 class Message(BaseModel):
     role: str
     content: str
