@@ -12,7 +12,16 @@ app = FastAPI(title="Chat API")
 @app.get("/health")
 def health():
     return {"status": "ok"}
-
+@app.get("/test-gemini")
+def test_gemini():
+    try:
+        response = client.models.generate_content(
+            model="gemini-3.6-flash",
+            contents="Reply with exactly: Gemini is working"
+        )
+        return {"status": "ok", "reply": response.text}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
