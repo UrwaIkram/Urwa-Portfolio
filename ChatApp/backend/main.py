@@ -9,6 +9,9 @@ from rag import retrieve
 
 load_dotenv()
 app = FastAPI(title="Chat API")
+@app.get("/health")
+def health():
+    return {"status": "ok"}
 
 app.add_middleware(
     CORSMiddleware,
